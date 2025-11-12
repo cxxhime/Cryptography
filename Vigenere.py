@@ -51,3 +51,6 @@ def devigenere(string, key):
 print("----- Vigenère -----")
 print(vigenere("Snowi le ragdoll", "chat"))
 print(devigenere("ccascoi hbdg cf zxbxv", "bonjour"))
+
+
+
