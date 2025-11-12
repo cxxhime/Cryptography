@@ -35,6 +35,16 @@ def vigenere_cipher(text, password):
     return "".join(crypted_text)
 
 
+def vigenere_uncipher(crypted_text, password):
+    list_of_keys = [ord(char) for char in password]
+    uncrypted_text = []
+    key_length = len(password)
+    
+    for index, char in enumerate(crypted_text):
+        current_key = list_of_keys[index % key_length]
+        uncrypted_text.append(cesar_cipher(char, -current_key))
+    
+    return "".join(uncrypted_text)
 
 
 
@@ -53,3 +63,7 @@ if __name__ == "__main__":
     password = "salut"
     result = vigenere_cipher(message, password)
     print(result)
+    
+    initial_message = vigenere_uncipher(result, password)
+    print(initial_message)
+    
